@@ -1,5 +1,6 @@
 return {
-	"shaunsingh/nord.nvim",
+	"gbprod/nord.nvim",
+	branch = "master",
 	lazy = false,
 	priority = 1000,
 	config = function()
