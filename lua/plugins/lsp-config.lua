@@ -33,6 +33,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    opts = require("addons.typescript"),
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lsp = require("lspconfig")
@@ -41,6 +42,12 @@ return {
           capabilities = capabilities,
         })
       end
+
+      -- Borders on hover
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        border = "rounded",
+      })
+
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
