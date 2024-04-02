@@ -13,11 +13,11 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroupf = vim.api.nvim_create_augroup
 augroupf("__formatter__", { clear = true })
 autocmd("BufWritePost", {
-	group = "__formatter__",
-	command = ":FormatWrite",
+  group = "__formatter__",
+  command = ":FormatWrite",
 })
 
 -- show diagnostics in insert mode
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	update_in_insert = true,
+  update_in_insert = true,
 })
