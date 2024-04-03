@@ -1,3 +1,3 @@
 return {
-	"YacineDo/mc.nvim",
+	"mg979/vim-visual-multi",
 }
