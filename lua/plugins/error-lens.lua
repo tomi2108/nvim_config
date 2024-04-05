@@ -1,3 +1,4 @@
+local palette = require("addons.everforest-palette")
 return {
 	"chikko80/error-lens.nvim",
 	event = "BufRead",
@@ -5,9 +6,15 @@ return {
 		"nvim-telescope/telescope.nvim",
 	},
 	opts = {
-		auto_adjust = {
-			enable = true,
-			fallback_bg_color = "#2D353B",
+		colors = {
+			error_fg = palette.red,
+			error_bg = palette.bg_red,
+			warn_fg = palette.yellow,
+			warn_bg = palette.bg_yellow,
+			info_fg = palette.blue,
+			info_bg = palette.bg_blue,
+			hint_fg = palette.green,
+			hint_bg = palette.bg_green,
 		},
 	},
 }

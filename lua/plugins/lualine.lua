@@ -1,3 +1,4 @@
+local palette = require("addons.everforest-palette")
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
@@ -13,13 +14,13 @@ return {
 		theme.inactive.a.fg = theme.command.a.bg
 
 		for _, letter in pairs(sections) do
-			theme.normal[letter].bg = "#2D353B"
-			theme.insert[letter].bg = "#2D353B"
-			theme.visual[letter].bg = "#2D353B"
-			theme.replace[letter].bg = "#2D353B"
-			theme.command[letter].bg = "#2D353B"
-			theme.terminal[letter].bg = "#2D353B"
-			theme.inactive[letter].bg = "#2D353B"
+			theme.normal[letter].bg = palette.bg0
+			theme.insert[letter].bg = palette.bg0
+			theme.visual[letter].bg = palette.bg0
+			theme.replace[letter].bg = palette.bg0
+			theme.command[letter].bg = palette.bg0
+			theme.terminal[letter].bg = palette.bg0
+			theme.inactive[letter].bg = palette.bg0
 		end
 
 		require("lualine").setup({
