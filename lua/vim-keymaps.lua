@@ -10,4 +10,4 @@ km.set("n", "<C-a>", "gg<S-v>G")
 km.set("n", "<C-j>", function()
   vim.diagnostic.goto_next({ float = { border = "rounded" } })
 end, opts)
-km.set("n", ":", "<cmd>FineCmdline<CR>", opts)
+km.set("n", ":", "<cmd>FineCmdline<CR>", opts);

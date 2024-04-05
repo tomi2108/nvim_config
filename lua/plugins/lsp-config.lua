@@ -5,7 +5,6 @@ local Lsps = {
 	"eslint",
 	"html",
 	"jsonls",
-	"ltex",
 	"tsserver",
 	"marksman",
 	"somesass_ls",

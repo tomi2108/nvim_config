@@ -7,7 +7,7 @@ return {
 	opts = {
 		auto_adjust = {
 			enable = true,
-			fallback_bg_color = "#2E3440",
+			fallback_bg_color = "#2D353B",
 		},
 	},
 }
