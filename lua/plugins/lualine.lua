@@ -1,6 +1,9 @@
 local palette = require("addons.everforest-palette")
 return {
 	"nvim-lualine/lualine.nvim",
+	dependencies = {
+		"archibate/lualine-time",
+	},
 	config = function()
 		local theme = require("lualine.themes.everforest")
 		local sections = { "a", "b", "c" }
@@ -23,6 +26,17 @@ return {
 			theme.inactive[letter].bg = palette.bg0
 		end
 
+		local word_count = function()
+			local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+			local content = table.concat(lines, " ")
+			local words = 0
+			for _ in content:gmatch("%a+") do
+				words = words + 1
+			end
+
+			return "Words: " .. words
+		end
+
 		require("lualine").setup({
 			options = {
 				theme = theme,
@@ -31,9 +45,9 @@ return {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { { "filename", path = 1 } },
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_x = { { word_count }, "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
-				lualine_z = { "location" },
+				lualine_z = { "location", "ctime" },
 			},
 		})
 	end,
