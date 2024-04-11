@@ -1,12 +1,15 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.cmd("set relativenumber")
-vim.cmd("set number")
-vim.cmd("set cursorline")
-vim.cmd("set termguicolors")
-vim.cmd("set scrolloff")
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
 vim.g.mapleader = " "
 
 -- format on save

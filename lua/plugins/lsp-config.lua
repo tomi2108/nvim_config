@@ -9,6 +9,7 @@ local Lsps = {
 	"marksman",
 	"somesass_ls",
 	"taplo",
+	"gopls",
 	"tailwindcss",
 	"lemminx",
 	"jdtls",
