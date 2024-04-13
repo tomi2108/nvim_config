@@ -35,5 +35,16 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		},
+		config = function()
+			vim.keymap.set("i", "<leader>;", function()
+				require("luasnip").jump(1, { silent = true })
+			end)
+			vim.keymap.set("i", "<leader>,", function()
+				require("luasnip").jump(-1, { silent = true })
+			end)
+			require("luasnip").filetype_extend("typescript", { "tsdoc" })
+			require("luasnip").filetype_extend("javascript", { "jsdoc" })
+			require("luasnip").filetype_extend("c", { "cdoc" })
+		end,
 	},
 }

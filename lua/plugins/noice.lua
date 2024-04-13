@@ -1,12 +1,24 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-    cmdline={
-      enabled=false
-    }
-  },
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-  },
+  -- "folke/noice.nvim",
+  -- event = "VeryLazy",
+  -- opts = {
+  --   cmdline = {
+  --     enabled = false,
+  --   },
+  --   lsp = {
+  --     signature = {
+  --       enabled = false,
+  --     },
+  --   },
+  -- },
+  -- dependencies = {
+  --   { "MunifTanjim/nui.nvim" },
+  --   {
+  --     "echasnovski/mini.nvim",
+  --     version = "*",
+  --     config = function()
+  --       require("mini.notify").setup({})
+  --     end,
+  --   },
+  -- },
 }
