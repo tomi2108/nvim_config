@@ -18,6 +18,8 @@ km.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Half page jumping
 km.set("n", "<C-d>", "<C-d>zz")
 km.set("n", "<C-u>", "<C-u>zz")
+km.set("n", "n", "nzzzv")
+km.set("n", "N", "Nzzzv")
 
 -- Whitespace jumping
 km.set("n", "E", "El")
