@@ -22,3 +22,15 @@ km.set("n", "<C-u>", "<C-u>zz")
 -- Whitespace jumping
 km.set("n", "E", "El")
 km.set("n", "B", "Bh")
+
+km.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Unbind arrow keys
+km.set({ "n", "i", "v" }, "<left>", "")
+km.set({ "n", "i", "v" }, "<right>", "")
+km.set({ "n", "i", "v" }, "<up>", "")
+km.set({ "n", "i", "v" }, "<down>", "")
+
+km.set("n", "<leader>]", ":cnext<CR>")
+km.set("n", "<leader>[", ":cprev<CR>")
+km.set("n", "<C-q>", ":cclose<CR>")
