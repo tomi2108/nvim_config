@@ -16,8 +16,6 @@ return {
 			plugin_count = plugin_count + 1
 		end
 		local header_val = {
-			[[        ~+]],
-			[[]],
 			[[                 *       +]],
 			[[           '                  |]],
 			[[       ()    .-.,="``"=.    - o -]],
@@ -27,7 +25,6 @@ return {
 			[[            .   '=.__.=' `='      *]],
 			[[   +                         +]],
 			[[        O      *        '       .]],
-			[[     ]],
 		}
 		local header = {
 			type = "text",
