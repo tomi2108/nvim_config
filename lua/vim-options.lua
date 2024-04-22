@@ -12,6 +12,8 @@ vim.opt.incsearch = true
 vim.opt.signcolumn = "yes"
 vim.opt.undofile = true
 
+vim.wo.wrap = false
+
 vim.g.mapleader = " "
 
 -- format on save
