@@ -10,7 +10,7 @@ local Lsps = {
 	-- "sonarlint-language-server",
 	"somesass_ls",
 	"taplo",
-	-- "gopls",
+	"gopls",
 	"tailwindcss",
 	"lemminx",
 	"jdtls",

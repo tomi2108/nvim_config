@@ -8,6 +8,8 @@ local ensure_installed = {
   "graphql",
   "http",
   "java",
+  "go",
+  "haskell",
   "scss",
   "sql",
   "typescript",
@@ -21,7 +23,6 @@ local ensure_installed = {
 }
 return {
   {
-
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
