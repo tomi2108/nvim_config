@@ -4,10 +4,7 @@ local opts = { noremap = true, silent = true }
 -- Increment/decrement
 km.set("n", "+", "<C-a>")
 km.set("n", "-", "<C-x>")
-km.set("n", "<C-a>", "gg<S-v>G")
 
--- Increment/decrement
-km.set("n", "+", "<C-a>")
 km.set("n", ":", "<cmd>FineCmdline<CR>", opts)
 km.set("n", "<leader>b", ":TroubleToggle<CR>")
 
@@ -39,3 +36,6 @@ km.set("n", "<C-q>", ":cclose<CR>")
 
 km.set("n", "<leader>for", "ofor (int i = 0; condition; i++) {<CR>}<Esc>Oreturn i;<Esc>kfcdwi")
 km.set("n", "<C-t>", "I# <Esc>")
+
+km.set("n", "$", "_", opts)
+km.set("n", "_", "$", opts)
