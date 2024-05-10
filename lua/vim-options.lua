@@ -17,7 +17,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.wo.wrap = false
+vim.wo.wrap = true
 
 vim.g.mapleader = " "
 

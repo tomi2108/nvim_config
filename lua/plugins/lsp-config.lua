@@ -14,6 +14,7 @@ local Lsps = {
 	"tailwindcss",
 	"lemminx",
 	"jdtls",
+	"zls",
 }
 local custom_setup = {
 	"clangd",
@@ -50,6 +51,7 @@ return {
 					})
 				end
 			end
+
 			lsp.clangd.setup({
 				capabilities = capabilities,
 				cmd = {
