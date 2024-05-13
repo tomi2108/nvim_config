@@ -18,6 +18,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.wo.wrap = true
+vim.opt.fillchars:append("eob: ")
 
 vim.g.mapleader = " "
 

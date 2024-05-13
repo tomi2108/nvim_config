@@ -20,6 +20,7 @@ local ensure_installed = {
   "bash",
   "markdown",
   "markdown_inline",
+  "vimdoc",
 }
 return {
   {

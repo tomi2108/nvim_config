@@ -10,6 +10,7 @@ return {
       vim.keymap.set("n", "<leader>fs", function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end, {})
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
       vim.keymap.set("n", "<leader>fws", function()
         local word = vim.fn.expand("<cword>")
         builtin.grep_string({ search = word })

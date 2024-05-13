@@ -40,3 +40,7 @@ km.set("n", "<C-t>", "I# <Esc>")
 
 km.set("n", "$", "_", opts)
 km.set("n", "_", "$", opts)
+
+-- jumplist
+km.set("n", "<C-x>", "<C-I>", opts)
+km.set("n", "<C-z>", "<C-O>", opts)
