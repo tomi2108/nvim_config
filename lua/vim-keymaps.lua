@@ -44,3 +44,6 @@ km.set("n", "_", "$", opts)
 -- jumplist
 km.set("n", "<C-x>", "<C-I>", opts)
 km.set("n", "<C-z>", "<C-O>", opts)
+
+-- Copy to system clipboard
+km.set("v", "Y", '"+y')
