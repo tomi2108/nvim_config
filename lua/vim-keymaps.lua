@@ -38,8 +38,8 @@ km.set("n", "<C-q>", ":cclose<CR>")
 km.set("n", "<leader>for", "ofor (int i = 0; condition; i++) {<CR>}<Esc>Oreturn i;<Esc>kfcdwi")
 km.set("n", "<C-t>", "I# <Esc>")
 
-km.set("n", "$", "_", opts)
-km.set("n", "_", "$", opts)
+km.set({ "n", "v" }, "$", "_", opts)
+km.set({ "n", "v" }, "_", "$", opts)
 
 -- jumplist
 km.set("n", "<C-x>", "<C-I>", opts)
