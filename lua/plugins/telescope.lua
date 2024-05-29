@@ -1,80 +1,84 @@
 local git_hunks = function()
-	require("telescope.pickers")
-		.new({
-			finder = require("telescope.finders").new_oneshot_job({ "git", "jump", "--stdout", "diff" }, {
-				entry_maker = function(line)
-					local filename, lnum_string = line:match("([^:]+):(%d+).*")
-					if filename:match("^/dev/null") then
-						return nil
-					end
+  require("telescope.pickers")
+      .new({
+        finder = require("telescope.finders").new_oneshot_job({ "git", "jump", "--stdout", "diff" }, {
+          entry_maker = function(line)
+            local filename, lnum_string = line:match("([^:]+):(%d+).*")
+            if filename:match("^/dev/null") then
+              return nil
+            end
 
-					return {
-						value = filename,
-						display = line,
-						ordinal = line,
-						filename = filename,
-						lnum = tonumber(lnum_string),
-					}
-				end,
-			}),
-			sorter = require("telescope.sorters").get_generic_fuzzy_sorter(),
-			previewer = require("telescope.config").values.grep_previewer({}),
-			results_title = "Git hunks",
-			prompt_title = "Git hunks",
-			layout_strategy = "flex",
-		}, {})
-		:find()
+            return {
+              value = filename,
+              display = line,
+              ordinal = line,
+              filename = filename,
+              lnum = tonumber(lnum_string),
+            }
+          end,
+        }),
+        sorter = require("telescope.sorters").get_generic_fuzzy_sorter(),
+        previewer = require("telescope.config").values.grep_previewer({}),
+        results_title = "Git hunks",
+        prompt_title = "Git hunks",
+        layout_strategy = "flex",
+      }, {})
+      :find()
 end
 
 return {
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.6",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>q", builtin.find_files, {})
-			vim.keymap.set("n", "<leader>b", builtin.diagnostics, {})
-			vim.keymap.set("n", "<leader>m", builtin.lsp_document_symbols, {})
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-			vim.keymap.set("n", "<leader>gh", git_hunks, {})
-			vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
-			vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {})
-			vim.keymap.set("n", "<leader>gd", builtin.lsp_type_definitions, {})
-			vim.keymap.set("n", "<leader>gi", builtin.lsp_implementations, {})
-			vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
-			vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-			vim.keymap.set("n", "<leader>fm", builtin.man_pages, {})
-			vim.keymap.set("n", "<leader>fws", function()
-				local word = vim.fn.expand("<cword>")
-				builtin.grep_string({ search = word })
-			end)
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.6",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local builtin = require("telescope.builtin")
+      vim.keymap.set("n", "<leader>q", builtin.find_files, {})
+      vim.keymap.set("n", "<leader>b", builtin.diagnostics, {})
+      vim.keymap.set("n", "<leader>m", builtin.lsp_document_symbols, {})
+      vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+      vim.keymap.set("n", "<leader>gh", git_hunks, {})
+      vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
+      vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {})
+      vim.keymap.set("n", "<leader>gd", builtin.lsp_type_definitions, {})
+      vim.keymap.set("n", "<leader>gi", builtin.lsp_implementations, {})
+      vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+      vim.keymap.set("n", "<leader>fm", builtin.man_pages, {})
+      vim.keymap.set("n", "<leader>fws", function()
+        local word = vim.fn.expand("<cword>")
+        builtin.grep_string({ search = word })
+      end)
 
-			vim.keymap.set("n", "<leader>fWs", function()
-				local word = vim.fn.expand("<cWORD>")
-				builtin.grep_string({ search = word })
-			end)
-		end,
-	},
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
-		config = function()
-			require("telescope").setup({
-				defaults = {
-					layout_strategy = "cursor",
-					layout_config = { width = 0.95 },
-					file_ignore_patterns = {
-						"node_modules",
-						"package-lock",
-					},
-				},
-				extensions = {
-					["ui-select"] = {
-						require("telescope.themes").get_dropdown({}),
-					},
-				},
-			})
-			require("telescope").load_extension("ui-select")
-		end,
-	},
+      vim.keymap.set("n", "<leader>fWs", function()
+        local word = vim.fn.expand("<cWORD>")
+        builtin.grep_string({ search = word })
+      end)
+    end,
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          layout_strategy = "horizontal",
+          layout_config = {
+            width = 0.95,
+            prompt_position = "top",
+            preview_width = 0.7,
+          },
+          file_ignore_patterns = {
+            "node_modules",
+            "package-lock",
+          },
+        },
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown({}),
+          },
+        },
+      })
+      require("telescope").load_extension("ui-select")
+    end,
+  },
 }
