@@ -16,7 +16,7 @@ return {
 					desc = "Organize Imports",
 				},
 				{
-					"<leader>cR",
+					"<leader>cr",
 					function()
 						vim.lsp.buf.code_action({
 							apply = true,

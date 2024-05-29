@@ -6,8 +6,7 @@ km.set("n", "+", "<C-a>")
 km.set("n", "-", "<C-x>")
 
 km.set("n", ":", "<cmd>FineCmdline<CR>", opts)
-km.set("n", "<leader>b", ":TroubleToggle<CR>")
-km.set("n", "<leader>d", ":HexToggle<CR>")
+km.set("n", "<leader>dd", ":HexToggle<CR>")
 
 -- Move lines
 km.set("v", "J", ":m '>+1<CR>gv=gv")
