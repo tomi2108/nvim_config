@@ -19,9 +19,9 @@ local git_hunks = function()
         }),
         sorter = require("telescope.sorters").get_generic_fuzzy_sorter(),
         previewer = require("telescope.config").values.grep_previewer({}),
-        results_title = "Git hunks",
+        results_title = "Results",
         prompt_title = "Git hunks",
-        layout_strategy = "flex",
+        layout_strategy = "horizontal",
       }, {})
       :find()
 end
@@ -65,7 +65,7 @@ return {
           layout_config = {
             width = 0.95,
             prompt_position = "top",
-            preview_width = 0.7,
+            preview_width = 0.65,
           },
           file_ignore_patterns = {
             "node_modules",
