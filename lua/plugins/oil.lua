@@ -3,7 +3,8 @@ return {
 	opts = {},
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		require("oil").setup({
+		local oil = require("oil")
+		oil.setup({
 			columns = {
 				"size",
 				"icon",
@@ -13,6 +14,6 @@ return {
 				show_hidden = true,
 			},
 		})
-		vim.keymap.set("n", "<leader>n", ":Oil .<CR>")
+		vim.keymap.set("n", "<leader>n", ":Oil <CR>")
 	end,
 }
