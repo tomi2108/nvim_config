@@ -46,3 +46,14 @@ km.set("n", "<C-y>", "<C-O>", opts)
 
 -- Copy to system clipboard
 km.set("v", "Y", '"+y')
+
+-- Open c manual
+km.set("n", "<leader>m", function()
+  local current_word = vim.fn.expand("<cword>")
+  vim.cmd(":e temp")
+  vim.cmd(":setlocal buftype=nofile")
+  vim.cmd(":setlocal bufhidden=delete")
+  vim.cmd(":setlocal noswapfile")
+  vim.cmd(":read !man -a " .. current_word)
+  vim.api.nvim_feedkeys("gg", "m", false)
+end, {})

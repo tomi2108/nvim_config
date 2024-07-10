@@ -7,7 +7,6 @@ local git_hunks = function()
 					if filename:match("^/dev/null") then
 						return nil
 					end
-
 					return {
 						value = filename,
 						display = line,
@@ -34,8 +33,6 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>q", builtin.find_files, {})
-			vim.keymap.set("n", "<leader>b", builtin.diagnostics, {})
-			vim.keymap.set("n", "<leader>m", builtin.lsp_document_symbols, {})
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 			vim.keymap.set("n", "<leader>gh", git_hunks, {})
 			vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
