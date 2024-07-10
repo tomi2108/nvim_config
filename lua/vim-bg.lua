@@ -23,7 +23,6 @@ vim.api.nvim_create_autocmd("Colorscheme", {
     for _, group in ipairs(groups) do
       vim.cmd("hi " .. group .. " ctermbg=None guibg=NONE")
     end
-
     return true
   end,
   desc = "Transparent backgrounds",
