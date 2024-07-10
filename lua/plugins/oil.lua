@@ -5,9 +5,11 @@ return {
 	config = function()
 		local oil = require("oil")
 		oil.setup({
+      constrain_cursor = "name",
 			columns = {
+        "permissions",
 				"size",
-				"icon",
+        "mtime"
 			},
 			skip_confirm_for_simple_edits = true,
 			view_options = {
