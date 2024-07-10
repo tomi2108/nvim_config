@@ -15,6 +15,7 @@ vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.cmd(":set guicursor=i:block")
 
 vim.wo.wrap = true
 vim.opt.fillchars:append("eob: ")
