@@ -5,7 +5,6 @@ local opts = { noremap = true, silent = true }
 km.set("n", "+", "<C-a>")
 km.set("n", "-", "<C-x>")
 
-km.set("n", ":", "<cmd>FineCmdline<CR>", opts)
 km.set("n", "<leader>dd", ":HexToggle<CR>")
 
 -- Move lines
@@ -34,7 +33,8 @@ km.set("n", "<leader>]", ":cnext<CR><CR>")
 km.set("n", "<leader>[", ":cprev<CR><CR>")
 km.set("n", "<C-q>", ":cclose<CR>")
 
-km.set("n", "<leader>for", "ofor (int i = 0; condition; i++) {<CR>}<Esc>Oreturn i;<Esc>kfcdwi")
+km.set("n", "<leader>for", "ofor (int i = 0; condition; i++){<CR>}<Esc>Oreturn i;<Esc>kfcdwi")
+km.set("n", "<leader>if", "oif (condition){<CR>}<Esc>kfcdwi")
 km.set("n", "<C-t>", "I# <Esc>")
 
 km.set({ "n", "v" }, "$", "_", opts)

@@ -1,5 +1,4 @@
 vim.opt.autoindent = true
-vim.opt.cmdheight = 0
 vim.opt.cursorline = false
 vim.opt.expandtab = true
 vim.opt.hlsearch = false
