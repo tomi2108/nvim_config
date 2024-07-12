@@ -47,17 +47,24 @@ km.set("n", "<C-y>", "<C-O>", opts)
 -- Copy to system clipboard
 km.set("v", "Y", '"+y')
 
+-- Jump to definition
+km.set("n", "gd", vim.lsp.buf.definition)
+
+-- Jump to diagnostics 
+km.set("n", "]d", vim.diagnostic.goto_next)
+km.set("n", "[d", vim.diagnostic.goto_prev)
+
 -- Open c manual
 km.set("n", "<leader>m", function()
-	local current_word = vim.fn.expand("<cword>")
-	vim.cmd(":new " .. current_word .. " Manual")
-	vim.cmd(":setlocal buftype=nofile")
-	vim.cmd(":setlocal bufhidden=delete")
-	vim.cmd(":setlocal noswapfile")
-	vim.cmd(":setlocal nonumber norelativenumber")
-	vim.cmd(":read !man -a " .. current_word)
-	vim.cmd(":silent! %s/.//g")
-	vim.cmd(":setlocal readonly")
-	vim.api.nvim_feedkeys("gg", "m", false)
-	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/NAME<CR>", true, true, true), "m", false)
+  local current_word = vim.fn.expand("<cword>")
+  vim.cmd(":new " .. current_word .. " Manual")
+  vim.cmd(":setlocal buftype=nofile")
+  vim.cmd(":setlocal bufhidden=delete")
+  vim.cmd(":setlocal noswapfile")
+  vim.cmd(":setlocal nonumber norelativenumber")
+  vim.cmd(":read !man -a " .. current_word)
+  vim.cmd(":silent! %s/.//g")
+  vim.cmd(":setlocal readonly")
+  vim.api.nvim_feedkeys("gg", "m", false)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/NAME<CR>", true, true, true), "m", false)
 end, {})
