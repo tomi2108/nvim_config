@@ -16,6 +16,6 @@ return {
 				show_hidden = true,
 			},
 		})
-		vim.keymap.set("n", "<leader>n", ":Oil <CR>")
+		vim.keymap.set("n", "<C-t>", ":Oil <CR>")
 	end,
 }

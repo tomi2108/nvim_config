@@ -35,7 +35,6 @@ km.set("n", "<C-q>", ":cclose<CR>")
 
 km.set("n", "<leader>for", "ofor (int i = 0; condition; i++){<CR>}<Esc>Oreturn i;<Esc>kfcdwi")
 km.set("n", "<leader>if", "oif (condition){<CR>}<Esc>kfcdwi")
-km.set("n", "<C-t>", "I# <Esc>")
 
 km.set({ "n", "v" }, "$", "_", opts)
 km.set({ "n", "v" }, "_", "$", opts)
@@ -50,21 +49,24 @@ km.set("v", "Y", '"+y')
 -- Jump to definition
 km.set("n", "gd", vim.lsp.buf.definition)
 
--- Jump to diagnostics 
+-- Jump to diagnostics
 km.set("n", "]d", vim.diagnostic.goto_next)
 km.set("n", "[d", vim.diagnostic.goto_prev)
 
+-- Alternate file
+km.set("n", "<C-q>", "<C-^>")
+
 -- Open c manual
 km.set("n", "<leader>m", function()
-  local current_word = vim.fn.expand("<cword>")
-  vim.cmd(":new " .. current_word .. " Manual")
-  vim.cmd(":setlocal buftype=nofile")
-  vim.cmd(":setlocal bufhidden=delete")
-  vim.cmd(":setlocal noswapfile")
-  vim.cmd(":setlocal nonumber norelativenumber")
-  vim.cmd(":read !man -a " .. current_word)
-  vim.cmd(":silent! %s/.//g")
-  vim.cmd(":setlocal readonly")
-  vim.api.nvim_feedkeys("gg", "m", false)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/NAME<CR>", true, true, true), "m", false)
+	local current_word = vim.fn.expand("<cword>")
+	vim.cmd(":new " .. current_word .. " Manual")
+	vim.cmd(":setlocal buftype=nofile")
+	vim.cmd(":setlocal bufhidden=delete")
+	vim.cmd(":setlocal noswapfile")
+	vim.cmd(":setlocal nonumber norelativenumber")
+	vim.cmd(":read !man -a " .. current_word)
+	vim.cmd(":silent! %s/.//g")
+	vim.cmd(":setlocal readonly")
+	vim.api.nvim_feedkeys("gg", "m", false)
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/NAME<CR>", true, true, true), "m", false)
 end, {})

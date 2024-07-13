@@ -30,10 +30,10 @@ return {
 				end)
 			end,
 		})
-		vim.keymap.set("n", "<leader>hp", gs.preview_hunk, {})
-		vim.keymap.set("n", "<leader>hr", gs.reset_hunk, {})
-		vim.keymap.set("n", "<leader>hs", gs.stage_hunk, {})
-		vim.keymap.set("n", "<leader>hu", gs.undo_stage_hunk, {})
-		vim.keymap.set("n", "<leader>hd", gs.diffthis, {})
+		vim.keymap.set("n", "<C-b><C-p>", gs.preview_hunk, {})
+		vim.keymap.set("n", "<C-b><C-r>", gs.reset_hunk, {})
+		vim.keymap.set("n", "<C-b><C-s>", gs.stage_hunk, {})
+		vim.keymap.set("n", "<C-b><C-u>", gs.undo_stage_hunk, {})
+		vim.keymap.set("n", "<C-b><C-d>", gs.diffthis, {})
 	end,
 }
