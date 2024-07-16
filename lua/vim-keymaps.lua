@@ -56,6 +56,12 @@ km.set("n", "[d", vim.diagnostic.goto_prev)
 -- Alternate file
 km.set("n", "<C-q>", "<C-^>")
 
+-- Join lines
+km.set("n", "J", "mzJ`z")
+
+-- Disable q:
+km.set("n", "q:", "<nop>")
+
 -- Open c manual
 km.set("n", "<leader>m", function()
 	local current_word = vim.fn.expand("<cword>")
