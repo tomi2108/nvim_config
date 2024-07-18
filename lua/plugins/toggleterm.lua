@@ -17,7 +17,6 @@ return {
         vim.api.nvim_buf_set_keymap(0, "t", "<c-l>", [[<C-\><C-n><C-W>l]], opts)
       end,
     })
-
     vim.keymap.set("n", [[<C-\>]], ":ToggleTerm<CR>", opts)
   end,
 }

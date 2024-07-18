@@ -33,9 +33,6 @@ km.set("n", "<leader>]", ":cnext<CR><CR>")
 km.set("n", "<leader>[", ":cprev<CR><CR>")
 km.set("n", "<C-q>", ":cclose<CR>")
 
-km.set("n", "<leader>for", "ofor (int i = 0; condition; i++){<CR>}<Esc>Oreturn i;<Esc>kfcdwi")
-km.set("n", "<leader>if", "oif (condition){<CR>}<Esc>kfcdwi")
-
 km.set({ "n", "v" }, "$", "_", opts)
 km.set({ "n", "v" }, "_", "$", opts)
 
