@@ -59,6 +59,9 @@ km.set("n", "J", "mzJ`z")
 -- Disable q:
 km.set("n", "q:", "<nop>")
 
+-- Open terminal split
+km.set("n", "<leader>i", ":new<CR>:term<CR>")
+
 -- Open c manual
 km.set("n", "<leader>m", function()
 	local current_word = vim.fn.expand("<cword>")
