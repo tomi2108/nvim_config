@@ -9,3 +9,4 @@ vim
 nvim_create_augroup
 nvim
 FormatWrite
+luasnip
