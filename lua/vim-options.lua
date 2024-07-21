@@ -16,6 +16,8 @@ vim.opt.tabstop = 2
 vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us", "es_es" }
 vim.cmd(":set guicursor=i:block")
 
 vim.wo.wrap = true
@@ -34,5 +36,5 @@ vim.g.mapleader = " "
 
 -- show diagnostics in insert mode
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	update_in_insert = true,
+  update_in_insert = true,
 })
