@@ -58,20 +58,20 @@ return {
     local section_mru = {
       type = "group",
       val = {
-        {
-          type = "text",
-          val = "Recent files",
-          opts = {
-            hl = "SpecialComment",
-            shrink_margin = false,
-            position = "center",
-          },
-        },
-        { type = "padding", val = 1 },
+        -- {
+        --   type = "text",
+        --   val = "Recent files",
+        --   opts = {
+        --     hl = "SpecialComment",
+        --     shrink_margin = false,
+        --     position = "center",
+        --   },
+        -- },
+        { type = "padding", val = 2 },
         {
           type = "group",
           val = function()
-            return { mru(0, cdir) }
+            return { mru(0, cdir, 5) }
           end,
           opts = { shrink_margin = false },
         },
@@ -83,11 +83,11 @@ return {
       { type = "padding", val = 2 },
       section_mru,
       { type = "padding", val = 1 },
-      {
-        type = "text",
-        val = string.format("✧ %s Plugins installed ✧", plugin_count),
-        opts = { position = "center", hl = "SpecialComment", shrink_margin = false },
-      },
+      -- {
+      --   type = "text",
+      --   val = string.format("✧ %s Plugins installed ✧", plugin_count),
+      --   opts = { position = "center", hl = "SpecialComment", shrink_margin = false },
+      -- },
     }
     alpha_nvim.setup(dashboard.config)
   end,
