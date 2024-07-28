@@ -16,13 +16,17 @@ require("everforest").setup({
   transparent_background_level = 2,
   on_highlights = function(hl, palette)
     hl.FloatBorder = { fg = palette.bg0, bg = "none" }
-    hl.TelescopeBorder= { fg = palette.bg0, bg = "none" }
+    hl.TelescopeBorder = { fg = palette.bg0, bg = "none" }
     hl.NeoTreeFloatNormal = { bg = "none", fg = palette.fg }
     hl.NeoTreeFloatTitle = { bg = "none", fg = palette.fg }
     hl.NeoTreeFloatBorder = { fg = palette.bg0, bg = "none" }
     hl.NeoTreeNormal = { bg = "none", fg = palette.fg }
     hl.NeoTreeEndOfBuffer = { bg = "none", fg = "none" }
     hl.TSString = { fg = palette.orange, bg = "none" }
+    hl.TSType = { fg = palette.yellow, bg = "none" }
+    hl.TSTypeDefinition = { fg = palette.yellow, bg = "none" }
+    hl.TSConstructor = { fg = palette.yellow, bg = "none" }
+    hl.TSTypeBuiltin = { fg = palette.yellow, bg = "none" }
     hl.String = { fg = palette.orange, bg = "none" }
     hl.EndOfBuffer = { bg = "none", fg = "none" }
     hl.YankyYanked = { bg = palette.bg_visual, fg = "none" }
@@ -45,3 +49,7 @@ require("everforest").setup({
 })
 
 vim.cmd.colorscheme("everforest")
+vim.keymap.set("n", "<leader>fhw", function()
+  local result = vim.treesitter.get_captures_at_cursor(0)
+  print(vim.inspect(result))
+end)

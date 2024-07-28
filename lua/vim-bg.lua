@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd("Colorscheme", {
       "NormalNC",
       "NormalFloat",
       "Float",
+      "FloatTitle",
       "FloatBorder",
       "SignColumn",
       -- "GitSignsAdd",
