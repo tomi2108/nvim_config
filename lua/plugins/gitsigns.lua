@@ -3,6 +3,14 @@ return {
 	config = function()
 		local gs = require("gitsigns")
 		gs.setup({
+			signs = {
+				add = { text = "A" },
+				change= { text = "C" },
+			},
+			signs_staged = {
+				add = { text = "A" },
+				change= { text = "C" },
+      },
 			on_attach = function(bufnr)
 				local gitsigns = require("gitsigns")
 
