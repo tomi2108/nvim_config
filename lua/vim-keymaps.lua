@@ -62,6 +62,10 @@ km.set("n", "q:", "<nop>")
 -- Open terminal split
 km.set("n", "<leader>i", ":new<CR>:term<CR>")
 
+-- Search and replace
+km.set("v", "<leader>s", ":s//g<C-f>h<C-c>")
+km.set("n", "<leader>sf", ":%s//g<C-f>h<C-c>")
+
 -- Open c manual
 km.set("n", "<leader>m", function()
 	local current_word = vim.fn.expand("<cword>")
