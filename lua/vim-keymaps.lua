@@ -29,9 +29,9 @@ km.set({ "n", "i", "v" }, "<right>", "")
 km.set({ "n", "i", "v" }, "<up>", "")
 km.set({ "n", "i", "v" }, "<down>", "")
 
-km.set("n", "<leader>]", ":cnext<CR><CR>")
-km.set("n", "<leader>[", ":cprev<CR><CR>")
-km.set("n", "<C-q>", ":cclose<CR>")
+km.set("n", "]c", ":cnext<CR><CR>")
+km.set("n", "[c", ":cprev<CR><CR>")
+km.set("n", "<C-s>", ":cclose<CR>")
 
 km.set({ "n", "v" }, "$", "_", opts)
 km.set({ "n", "v" }, "_", "$", opts)
@@ -65,6 +65,9 @@ km.set("n", "<leader>i", ":new<CR>:term<CR>")
 -- Search and replace
 km.set("v", "<leader>s", ":s//g<C-f>h<C-c>")
 km.set("n", "<leader>sf", ":%s//g<C-f>h<C-c>")
+
+-- Cut to void register
+km.set({ "n", "v" }, "x", '"_x', opts)
 
 -- Open c manual
 km.set("n", "<leader>m", function()
