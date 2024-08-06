@@ -25,6 +25,7 @@ local everforest_setup = function()
       hl.FloatBorder = { fg = palette.bg0, bg = "none" }
       hl.TelescopeBorder = { fg = palette.bg0, bg = "none" }
       hl.TelescopeSelection = { fg = palette.fg, bg = palette.bg_visual }
+      hl.WinSeparator = { fg = palette.bg0, bg = "none" }
       hl.NeoTreeFloatNormal = { bg = "none", fg = palette.fg }
       hl.NeoTreeFloatTitle = { bg = "none", fg = palette.fg }
       hl.NeoTreeFloatBorder = { fg = palette.bg0, bg = "none" }
@@ -55,8 +56,8 @@ local everforest_setup = function()
       end
     end,
   })
-  vim.cmd("hi TelescopeSelection guibg=" .. custom_colors.bg_visual)
   vim.cmd.colorscheme("everforest")
+  vim.cmd("hi TelescopeSelection guibg=" .. custom_colors.bg_visual)
   common_setup()
 end
 
@@ -69,7 +70,15 @@ local solarized_osaka_setup = function()
   common_setup()
 end
 
+local rose_pine_setup = function()
+  require("rose-pine").setup({})
+  vim.o.background = "dark"
+  vim.cmd.colorscheme("rose-pine")
+  common_setup()
+end
+
 return {
   everforest_setup = everforest_setup,
   solarized_osaka_setup = solarized_osaka_setup,
+  rose_pine_setup = rose_pine_setup,
 }
