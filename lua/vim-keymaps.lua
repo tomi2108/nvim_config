@@ -29,24 +29,28 @@ km.set({ "n", "i", "v" }, "<right>", "")
 km.set({ "n", "i", "v" }, "<up>", "")
 km.set({ "n", "i", "v" }, "<down>", "")
 
+-- Quick fix navigation
 km.set("n", "]c", ":cnext<CR><CR>")
 km.set("n", "[c", ":cprev<CR><CR>")
-km.set("n", "<C-s>", ":cclose<CR>")
+km.del("n", "<C-w><C-d>")
+km.del("n", "<C-w>d")
+km.set("n", "<C-w>", ":cclose<CR>", opts)
 
 km.set({ "n", "v" }, "$", "_", opts)
 km.set({ "n", "v" }, "_", "$", opts)
 
--- jumplist
+-- Jumplist
 km.set("n", "<C-p>", "<C-I>", opts)
 km.set("n", "<C-y>", "<C-O>", opts)
 
 -- Copy to system clipboard
 km.set("v", "Y", '"+y')
 
--- Jump to definition
+-- Lsp
 km.set("n", "gd", vim.lsp.buf.definition)
+km.set("n", "grn", vim.lsp.buf.rename)
 
--- Jump to diagnostics
+-- Diagnostic navigation
 km.set("n", "]d", vim.diagnostic.goto_next)
 km.set("n", "[d", vim.diagnostic.goto_prev)
 
@@ -55,6 +59,8 @@ km.set("n", "<C-q>", "<C-^>")
 
 -- Join lines
 km.set("n", "J", "mzJ`z")
+-- Split lines
+km.set("n", "H", "r<CR>")
 
 -- Disable q:
 km.set("n", "q:", "<nop>")
@@ -64,22 +70,24 @@ km.set("n", "<leader>i", ":new<CR>:term<CR>")
 
 -- Search and replace
 km.set("v", "<leader>s", ":s//g<C-f>h<C-c>")
-km.set("n", "<leader>sf", ":%s//g<C-f>h<C-c>")
+km.set("n", "<leader>s", ":%s//g<C-f>h<C-c>")
 
 -- Cut to void register
 km.set({ "n", "v" }, "x", '"_x', opts)
+-- Paste to void register
+km.set("v", "p", '"_dP', opts)
 
 -- Open c manual
 km.set("n", "<leader>m", function()
-	local current_word = vim.fn.expand("<cword>")
-	vim.cmd(":new " .. current_word .. " Manual")
-	vim.cmd(":setlocal buftype=nofile")
-	vim.cmd(":setlocal bufhidden=delete")
-	vim.cmd(":setlocal noswapfile")
-	vim.cmd(":setlocal nonumber norelativenumber")
-	vim.cmd(":read !man -a " .. current_word)
-	vim.cmd(":silent! %s/.//g")
-	vim.cmd(":setlocal readonly")
-	vim.api.nvim_feedkeys("gg", "m", false)
-	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/NAME<CR>", true, true, true), "m", false)
+  local current_word = vim.fn.expand("<cword>")
+  vim.cmd(":new " .. current_word .. " Manual")
+  vim.cmd(":setlocal buftype=nofile")
+  vim.cmd(":setlocal bufhidden=delete")
+  vim.cmd(":setlocal noswapfile")
+  vim.cmd(":setlocal nonumber norelativenumber")
+  vim.cmd(":read !man -a " .. current_word)
+  vim.cmd(":silent! %s/.//g")
+  vim.cmd(":setlocal readonly")
+  vim.api.nvim_feedkeys("gg", "m", false)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/NAME<CR>", true, true, true), "m", false)
 end, {})
