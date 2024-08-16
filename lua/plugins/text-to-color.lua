@@ -1,6 +1,5 @@
 return {
 	"svermeulen/text-to-colorscheme.nvim",
-	lazy = false,
 	config = function()
 		require("text-to-colorscheme").setup({
 			-- hsv_palettes = {
