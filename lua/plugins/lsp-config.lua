@@ -19,6 +19,7 @@ local Lsps = {
 local custom_setup = {
   "clangd",
   "snyk_ls",
+  "sqls",
 }
 
 return {
@@ -43,6 +44,8 @@ return {
     "neovim/nvim-lspconfig",
     opts = require("addons.typescript"),
     config = function()
+      local mason_path = "/Users/tsanchen/.local/share/nvim/mason"
+      local mason_bin_path = mason_path .. "/bin"
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lsp = require("lspconfig")
       for _, v in pairs(Lsps) do
@@ -52,8 +55,6 @@ return {
             autostart = true,
           })
         end
-        local mason_path = "/Users/tsanchen/.local/share/nvim/mason"
-        local mason_bin_path = mason_path .. "/bin"
         require("sonarlint").setup({
           settings = {
             sonarlint = {
@@ -90,6 +91,14 @@ return {
           },
         })
       end
+
+      lsp.sqls.setup({
+        cmd = {
+          mason_bin_path .. "/sqls",
+          "-config",
+          "/Users/tsanchen/.local/share/nvim/mason/share/sqls-config.yml"
+        },
+      })
 
       lsp.clangd.setup({
         capabilities = capabilities,
