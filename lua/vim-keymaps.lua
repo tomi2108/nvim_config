@@ -91,3 +91,20 @@ km.set("n", "<leader>m", function()
   vim.api.nvim_feedkeys("gg", "m", false)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("/NAME<CR>", true, true, true), "m", false)
 end, {})
+
+-- Diff clipboard
+km.set("n","<leader>dc",function()
+  vim.cmd([[
+    let ft=&ft
+    leftabove vnew [Clipboard]
+    setlocal bufhidden=wipe buftype=nofile noswapfile
+    put +
+    0d_
+    " remove CR for Windows
+    silent %s/\r$//e
+    execute "set ft=" . ft
+    diffthis
+    wincmd p
+    diffthis
+  ]])
+end, { desc = "Compare Active File with Clipboard" })

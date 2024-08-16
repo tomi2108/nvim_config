@@ -13,8 +13,10 @@ local Lsps = {
   "gopls",
   "tailwindcss",
   "lemminx",
+  "csharp_ls",
   "jdtls",
   "zls",
+  "yamlls"
 }
 local custom_setup = {
   "clangd",
