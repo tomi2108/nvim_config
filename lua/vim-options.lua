@@ -20,7 +20,7 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_us", "es_es" }
 vim.cmd(":set guicursor=i:block")
 
-vim.wo.wrap = true
+vim.wo.wrap = false
 vim.opt.fillchars:append("eob: ")
 
 vim.g.mapleader = " "
