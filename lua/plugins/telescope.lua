@@ -28,9 +28,11 @@ end
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-	 	tag = "0.1.6",
-    priority = 1000,
-		dependencies = { "nvim-lua/plenary.nvim" },
+		tag = "0.1.6",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"svermeulen/text-to-colorscheme.nvim",
+		},
 		config = function()
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>q", builtin.find_files, {})

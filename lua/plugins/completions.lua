@@ -21,11 +21,12 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" }, -- For luasnip users.
 					{ name = "buffer" },
+					{ name = "path" },
 					{ name = "cmdline" },
-					{ name = "cmp_nvim_lsp_signature_help" },
-					{ name = "cmp_nvim_lsp_document_symbol" },
+					-- { name = "cmp_nvim_lsp_signature_help" },
+					-- { name = "cmp_nvim_lsp_document_symbol" },
 					{ name = "friendly-snippets" },
-					{ name = "dotenv" },
+					-- { name = "dotenv" },
 					{ name = "cmp-npm" },
 				}),
 			})
@@ -39,6 +40,7 @@ return {
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
+					{ name = "path" },
 				}, {
 					{
 						name = "cmdline",
@@ -60,7 +62,8 @@ return {
 	},
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-cmdline" },
-	  { "hrsh7th/cmp-nvim-lsp-document-symbol" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
 	{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 	{ "hrsh7th/cmp-buffer" },
 	{ "rafamadriz/friendly-snippets" },
