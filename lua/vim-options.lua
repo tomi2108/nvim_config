@@ -1,6 +1,8 @@
 vim.opt.autoindent = true
+vim.opt.cmdheight = 0
 vim.opt.cursorline = false
 vim.opt.expandtab = true
+vim.opt.fillchars:append("eob: ")
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
@@ -11,17 +13,16 @@ vim.opt.shiftwidth = 2
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.softtabstop = 2
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us", "es_es" }
 vim.opt.swapfile = false
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
-vim.opt.undofile = true
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.spell = true
-vim.opt.spelllang = { "en_us", "es_es" }
-vim.cmd(":set guicursor=i:block")
-
+vim.opt.undofile = true
 vim.wo.wrap = false
-vim.opt.fillchars:append("eob: ")
+
+vim.cmd(":set guicursor=i:block")
 
 vim.g.mapleader = " "
 
