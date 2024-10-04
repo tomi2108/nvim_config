@@ -80,7 +80,7 @@ return {
 						".git/",
 						"build/",
 						"dist/",
-						"out/",
+						"bin/",
 						".png",
 						".jpg",
 						".gif",

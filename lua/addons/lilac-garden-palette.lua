@@ -1,7 +1,8 @@
 return {
-	background = "#0B2A32",
+	background = "#1c2d36",
 	fg= "#D6DDD0",
 	blue = "#258EA6",
+	visual= "#185c6e",
 	pink = "#D0BFCD",
 	cyan = "#549F93",
 	green = "#8BB6A6",

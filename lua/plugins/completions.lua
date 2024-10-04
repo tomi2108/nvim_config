@@ -3,6 +3,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
+			local lspkind = require("lspkind")
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.setup({
 				snippet = {
@@ -22,13 +23,21 @@ return {
 					{ name = "luasnip" }, -- For luasnip users.
 					{ name = "buffer" },
 					{ name = "path" },
-					{ name = "cmdline" },
-					-- { name = "cmp_nvim_lsp_signature_help" },
-					-- { name = "cmp_nvim_lsp_document_symbol" },
+					-- { name = "cmdline" },
+					{ name = "cmp_nvim_lsp_signature_help" },
+					{ name = "cmp_nvim_lsp_document_symbol" },
 					{ name = "friendly-snippets" },
-					-- { name = "dotenv" },
+					{ name = "dotenv" },
 					{ name = "cmp-npm" },
 				}),
+				formatting = {
+					format = lspkind.cmp_format({
+						mode = "text_symbol",
+						maxwidth = 50,
+						ellipsis_char = "...",
+						show_labelDetails = true,
+					}),
+				},
 			})
 			cmp.setup.cmdline("/", {
 				mapping = cmp.mapping.preset.cmdline(),
@@ -41,13 +50,12 @@ return {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = "path" },
-				}, {
-					{
-						name = "cmdline",
-						option = {
-							ignore_cmds = { "Man", "!" },
-						},
-					},
+					-- {
+					-- 	name = "cmdline",
+					-- 	option = {
+					-- 		ignore_cmds = { "Man", "!" },
+					-- 	},
+					-- },
 				}),
 			})
 		end,
@@ -61,7 +69,7 @@ return {
 		end,
 	},
 	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/cmp-cmdline" },
+	-- { "hrsh7th/cmp-cmdline" },
 	{ "hrsh7th/cmp-path" },
 	{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
 	{ "hrsh7th/cmp-nvim-lsp-signature-help" },

@@ -1,0 +1,86 @@
+-- -- plugin/tabline.lua
+--
+-- local function current_time()
+--   return os.date "%H:%M"
+-- end
+--
+-- local function current_day()
+--   return os.date "%A"
+-- end
+--
+-- local function current_file()
+--   local filename = vim.fn.expand "%:t"
+--   return filename == "" and current_day() or filename
+-- end
+--
+-- local event_cache = {
+--   value = nil,
+--   timestamp = nil,
+--   refresh_interval = 500,
+-- }
+--
+-- local function current_cal_event()
+--   local now = os.time()
+--
+--   -- Check if the cache is still valid
+--   if event_cache.value and (now - event_cache.timestamp < event_cache.refresh_interval) then
+--     return event_cache.value
+--   end
+--
+--   -- AppleScript code as a single string
+--   local script = [[
+--     set theStartDate to current date
+--     set theEndDate to theStartDate + (1 * days)
+--
+-- tell application "Calendar"
+-- 	tell calendar "Trabajo"
+-- 		set calendarevents to every event where its start date is greater than or equal to theStartDate and end date is less than or equal to theEndDate
+-- 		
+-- 		if ((count of calendarevents) is not equal to 0) then
+-- 		set eventsummary to summary of first item of calendarevents
+-- 		set eventsdstr to start date of first item of calendarevents as string
+-- 		set wcount to count (words of eventsdstr)
+-- 		set ehours to word (wcount - 2) of eventsdstr
+-- 		set eminutes to word (wcount - 1) of eventsdstr
+-- 		set eventsd to ehours & ":" & eminutes
+-- 		
+-- 		set eventstatus to status of first item of calendarevents
+-- 		return "" & eventsummary & " " & eventsd & " Status: " & eventstatus
+--     else 
+--     return "No events today :)"
+--   end if	
+-- 	end tell
+-- end tell
+-- ]]
+--
+--   -- Execute the AppleScript using osascript
+--   local handle = io.popen("osascript -e '" .. script .. "'")
+--
+--   if handle == nil then
+--     event_cache.value = "Nothing's up"
+--     event_cache.timestamp = now
+--     return event_cache.value
+--   end
+--
+--   local result = handle:read "*a"
+--   handle:close()
+--
+--   -- Update the cache
+--   event_cache.value = result:gsub("^%s*(.-)%s*$", "%1")
+--   event_cache.timestamp = now
+--
+--   return result
+-- end
+--
+-- vim.opt.showtabline = 2
+-- vim.cmd "highlight! link TabLineFile @field"
+-- vim.cmd "highlight! link TabLineEvent @diff.plus"
+-- vim.cmd "highlight! TabLineEventBg guifg=#333c48"
+--
+-- vim.o.tabline =
+--   "%#TabLineFile#%{v:lua.current_file()} %h%m%r %= %#TabLineEvent#%{v:lua.current_cal_event()}" -- " ♥ "
+--
+-- _G.current_time = current_time
+-- _G.current_file = current_file
+-- _G.current_cal_event = current_cal_event
+return {}

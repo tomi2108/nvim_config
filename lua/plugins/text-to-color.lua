@@ -68,8 +68,8 @@ return {
 			},
 			default_palette = "Lilac garden",
 		})
-		vim.cmd("colorscheme text-to-colorscheme")
-		local setup = require("vim-colorscheme")
-		setup.lilac_garden_setup()
+		-- vim.cmd("colorscheme text-to-colorscheme")
+		-- local setup = require("vim-colorscheme")
+		-- setup.lilac_garden_setup()
 	end,
 }
