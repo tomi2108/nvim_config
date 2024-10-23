@@ -74,8 +74,7 @@ km.set("n", "<leader>s", ":%s//g<C-f>h<C-c>")
 
 -- Cut to void register
 km.set({ "n", "v" }, "x", '"_x', opts)
--- Paste to void register
-km.set("v", "p", '"_dP', opts)
+km.set({ "n", "v" }, "X", '"_X', opts)
 
 -- Open c manual
 km.set("n", "<leader>m", function()

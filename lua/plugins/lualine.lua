@@ -103,8 +103,6 @@ return {
 		--   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
 		--   local content = table.concat(lines, " ")
 		--   local words = 0
-		--   for _ in content:gmatch("%a+") do
-		--     words = words + 1
 		--   end
 		--   return "Words: " .. words
 		-- end

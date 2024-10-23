@@ -15,12 +15,6 @@ return {
 		})
 
 		tmux.run({
-			cmd = "tmuxifier load-window tpso",
-			name = "tp SO",
-			read_after_cmd = false,
-		})
-
-		tmux.run({
 			cmd = "npm run dev",
 			name = "npm run dev",
 		})

@@ -83,15 +83,18 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 		config = function()
-			vim.keymap.set("n", ";", function()
-				require("luasnip").jump(1, { silent = true })
+			local ls = require("luasnip")
+			vim.keymap.set({ "i", "s" }, "<C-l>", function()
+				ls.jump(1, { silent = true })
 			end, { noremap = true, silent = true })
-			vim.keymap.set("n", ",", function()
-				require("luasnip").jump(-1, { silent = true })
+			vim.keymap.set({ "i", "s" }, "<C-j>", function()
+				ls.jump(-1, { silent = true })
 			end, { noremap = true, silent = true })
-			require("luasnip").filetype_extend("typescript", { "tsdoc" })
-			require("luasnip").filetype_extend("javascript", { "jsdoc" })
-			require("luasnip").filetype_extend("c", { "cdoc" })
+			ls.filetype_extend("typescript", { "tsdoc" })
+			ls.filetype_extend("javascript", { "jsdoc" })
+			ls.filetype_extend("c", { "cdoc" })
+			local as = require("addons.snippets")
+			as.load_snippets()
 		end,
 	},
 }
