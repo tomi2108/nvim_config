@@ -1,6 +1,5 @@
 return {
 	"otavioschwanck/tmux-awesome-manager.nvim",
-
 	config = function()
 		local tmux = require("tmux-awesome-manager")
 		tmux.setup({
