@@ -5,7 +5,7 @@ local Lsps = {
 	"eslint",
 	"html",
 	"jsonls",
-	-- "tsserver",
+	"ts_ls",
 	"marksman",
 	"omnisharp",
 	-- "sonarlint",
@@ -51,7 +51,7 @@ return {
 		},
 		opts = require("addons.typescript"),
 		config = function()
-			local mason_path = "/Users/tsanchen/.local/share/nvim/mason"
+			local mason_path = "/home/tsanchen/.local/share/nvim/mason"
 			local mason_bin_path = mason_path .. "/bin"
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -69,47 +69,47 @@ return {
 						end
 					end
 				end
-				require("sonarlint").setup({
-					settings = {
-						sonarlint = {
-							connectedMode = {
-								project = {
-									projectKey = "migra-apoderados",
-									connectionId = "https-sonarqube-agil-movistar-com-ar-",
-								},
-							},
-						},
-						connections = {
-							sonarqube = {
-								{
-									connectionId = "https-sonarqube-agil-movistar-com-ar-",
-									serverUrl = "https://sonarqube.agil.movistar.com.ar/",
-								},
-							},
-						},
-					},
-					server = {
-						cmd = {
-							mason_bin_path .. "/sonarlint-language-server",
-							"-stdio",
-							"-analyzers",
-							vim.fn.expand(mason_path .. "/share/sonarlint-analyzers/sonarjs.jar"),
-						},
-					},
-					filetypes = {
-						"javascript",
-						"javascriptreact",
-						"typescript",
-						"typescriptreact",
-					},
-				})
+			-- 	require("sonarlint").setup({
+			-- 		settings = {
+			-- 			sonarlint = {
+			-- 				connectedMode = {
+			-- 					project = {
+			-- 						projectKey = "migra-apoderados",
+			-- 						connectionId = "https-sonarqube-agil-movistar-com-ar-",
+			-- 					},
+			-- 				},
+			-- 			},
+			-- 			connections = {
+			-- 				sonarqube = {
+			-- 					{
+			-- 						connectionId = "https-sonarqube-agil-movistar-com-ar-",
+			-- 						serverUrl = "https://sonarqube.agil.movistar.com.ar/",
+			-- 					},
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 		server = {
+			-- 			cmd = {
+			-- 				mason_bin_path .. "/sonarlint-language-server",
+			-- 				"-stdio",
+			-- 				"-analyzers",
+			-- 				vim.fn.expand(mason_path .. "/share/sonarlint-analyzers/sonarjs.jar"),
+			-- 			},
+			-- 		},
+			-- 		filetypes = {
+			-- 			"javascript",
+			-- 			"javascriptreact",
+			-- 			"typescript",
+			-- 			"typescriptreact",
+			-- 		},
+			-- 	})
 			end
 
 			lsp.sqls.setup({
 				cmd = {
 					mason_bin_path .. "/sqls",
 					"-config",
-					"/Users/tsanchen/.local/share/nvim/mason/share/sqls-config.yml",
+					"/home/tsanchen/.local/share/nvim/mason/share/sqls-config.yml",
 				},
 			})
 

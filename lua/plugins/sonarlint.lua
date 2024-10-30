@@ -1,46 +1,46 @@
 return {
-  url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
-  dependencies = {
-    "mfussenegger/nvim-jdtls",
-  },
-  brach = "connected-mode",
-  config = function()
-    local mason_path = "/Users/tsanchen/.local/share/nvim/mason"
-    local mason_bin_path = mason_path .. "/bin"
-    require("sonarlint").setup({
-      settings = {
-        sonarlint = {
-          connectedMode = {
-            project = {
-              projectKey = "migra-apoderados",
-              connectionId = "https-sonarqube-agil-movistar-com-ar-",
-            },
-          },
-        },
-        connections = {
-          sonarqube = {
-            {
-              connectionId = "https-sonarqube-agil-movistar-com-ar-",
-              serverUrl = "https://sonarqube.agil.movistar.com.ar/",
-              token = "squ_dad782ef2f02488725669d9cea51c1c53ba05dbe",
-            },
-          },
-        },
-      },
-      server = {
-        cmd = {
-          mason_bin_path .. "/sonarlint-language-server",
-          "-stdio",
-          "-analyzers",
-          vim.fn.expand(mason_path .. "/share/sonarlint-analyzers/sonarjs.jar"),
-        },
-      },
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-      },
-    })
-  end,
+  -- url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+  -- dependencies = {
+  --   "mfussenegger/nvim-jdtls",
+  -- },
+  -- brach = "connected-mode",
+  -- config = function()
+  --   local mason_path = "/Users/tsanchen/.local/share/nvim/mason"
+  --   local mason_bin_path = mason_path .. "/bin"
+  --   require("sonarlint").setup({
+  --     settings = {
+  --       sonarlint = {
+  --         connectedMode = {
+  --           project = {
+  --             projectKey = "migra-apoderados",
+  --             connectionId = "https-sonarqube-agil-movistar-com-ar-",
+  --           },
+  --         },
+  --       },
+  --       connections = {
+  --         sonarqube = {
+  --           {
+  --             connectionId = "https-sonarqube-agil-movistar-com-ar-",
+  --             serverUrl = "https://sonarqube.agil.movistar.com.ar/",
+  --             token = "squ_dad782ef2f02488725669d9cea51c1c53ba05dbe",
+  --           },
+  --         },
+  --       },
+  --     },
+  --     server = {
+  --       cmd = {
+  --         mason_bin_path .. "/sonarlint-language-server",
+  --         "-stdio",
+  --         "-analyzers",
+  --         vim.fn.expand(mason_path .. "/share/sonarlint-analyzers/sonarjs.jar"),
+  --       },
+  --     },
+  --     filetypes = {
+  --       "javascript",
+  --       "javascriptreact",
+  --       "typescript",
+  --       "typescriptreact",
+  --     },
+  --   })
+  -- end,
 }
