@@ -19,11 +19,11 @@ local everforest_setup = function()
 		show_eob = false,
 		float_style = "dim",
 		inlay_hints_background = "none",
-		background = "medium",
+		background = "hard",
 		transparent_background_level = 2,
 		on_highlights = function(hl, palette)
-			hl.FloatBorder = { fg = palette.bg0, bg = "none" }
-			hl.TelescopeBorder = { fg = palette.bg0, bg = "none" }
+			hl.FloatBorder = { fg = palette.bg0, bg = "None" }
+			hl.TelescopeBorder = { fg = palette.bg0, bg = "None" }
 			hl.TelescopeResultsBorder = { fg = palette.bg0, bg = "None" }
 			hl.TelescopePromptBorder = { fg = palette.bg0, bg = "None" }
 			hl.TelescopePreviewBorder = { fg = palette.bg0, bg = "None" }
@@ -34,24 +34,24 @@ local everforest_setup = function()
 			hl.NeoTreeFloatBorder = { fg = palette.bg0, bg = "None" }
 			hl.NeoTreeNormal = { bg = palette.bg0, fg = palette.fg }
 			hl.NeoTreeEndOfBuffer = { bg = palette.bg0, fg = "None" }
-			hl.TSString = { fg = palette.orange, bg = "none" }
-			hl.TSType = { fg = palette.yellow, bg = "none" }
-			hl.TSTypeDefinition = { fg = palette.yellow, bg = "none" }
-			hl.TSConstructor = { fg = palette.yellow, bg = "none" }
-			hl.TSTypeBuiltin = { fg = palette.yellow, bg = "none" }
-			hl.String = { fg = palette.orange, bg = "none" }
-			hl.EndOfBuffer = { bg = "none", fg = "none" }
-			hl.YankyYanked = { bg = palette.bg_visual, fg = "none" }
-			hl.flogBranch0 = { bg = "none", fg = palette.green }
-			hl.flogBranch1 = { bg = "none", fg = palette.green }
-			hl.flogBranch2 = { bg = "none", fg = palette.yellow }
-			hl.flogBranch3 = { bg = "none", fg = palette.orange }
-			hl.flogBranch4 = { bg = "none", fg = palette.purple }
-			hl.flogBranch5 = { bg = "none", fg = palette.green }
-			hl.flogBranch6 = { bg = "none", fg = palette.aqua }
-			hl.flogBranch7 = { bg = "none", fg = palette.purple }
-			hl.flogBranch8 = { bg = "none", fg = palette.red }
-			hl.flogBranch9 = { bg = "none", fg = palette.purple }
+			hl.TSString = { fg = palette.orange, bg = "None" }
+			hl.TSType = { fg = palette.yellow, bg = "None" }
+			hl.TSTypeDefinition = { fg = palette.yellow, bg = "None" }
+			hl.TSConstructor = { fg = palette.yellow, bg = "None" }
+			hl.TSTypeBuiltin = { fg = palette.yellow, bg = "None" }
+			hl.String = { fg = palette.orange, bg = "None" }
+			hl.EndOfBuffer = { bg = "None", fg = "None" }
+			hl.YankyYanked = { bg = palette.bg_visual, fg = "None" }
+			hl.flogBranch0 = { bg = "None", fg = palette.green }
+			hl.flogBranch1 = { bg = "None", fg = palette.green }
+			hl.flogBranch2 = { bg = "None", fg = palette.yellow }
+			hl.flogBranch3 = { bg = "None", fg = palette.orange }
+			hl.flogBranch4 = { bg = "None", fg = palette.purple }
+			hl.flogBranch5 = { bg = "None", fg = palette.green }
+			hl.flogBranch6 = { bg = "None", fg = palette.aqua }
+			hl.flogBranch7 = { bg = "None", fg = palette.purple }
+			hl.flogBranch8 = { bg = "None", fg = palette.red }
+			hl.flogBranch9 = { bg = "None", fg = palette.purple }
 		end,
 		colours_override = function(palette)
 			for k, v in pairs(custom_colors) do
@@ -83,7 +83,7 @@ end
 local lilac_garden_setup = function()
 	local palette = require("addons.lilac-garden-palette")
 	vim.api.nvim_set_hl(0, "FloatBorder", { fg = palette.background, bg = "None" })
-	vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = palette.background, bg = "none" })
+	vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = palette.background, bg = "None" })
 	vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = palette.background, bg = "None" })
 	vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = palette.background, bg = "None" })
 	vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = palette.background, bg = "None" })
@@ -124,19 +124,19 @@ local zenbones_setup = function()
 	local palette = require("addons.zenwritten-palette")
 	common_setup()
 	vim.cmd.colorscheme("zenwritten")
-	vim.api.nvim_set_hl(0, "FloatBorder", { fg = palette.background, bg = "None" })
+	vim.api.nvim_set_hl(0, "FloatBorder", { fg = "None", bg = "None" })
 	vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = palette.inactive, bg = "None" })
-	vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = palette.background, bg = "none" })
-	vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = palette.background, bg = "None" })
-	vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = palette.background, bg = "None" })
-	vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = palette.background, bg = "None" })
+	vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "None", bg = "None" })
+	vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "None", bg = "None" })
+	vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "None", bg = "None" })
+	vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "None", bg = "None" })
 	vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = palette.fg, bg = palette.visual })
-	vim.api.nvim_set_hl(0, "WinSeparator", { fg = palette.background, bg = "None" })
-	vim.api.nvim_set_hl(0, "NeoTreeFloatNormal", { bg = palette.background, fg = palette.fg })
-	vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { bg = palette.background, fg = palette.fg })
-	vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = palette.background, bg = "None" })
-	vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = palette.background, fg = palette.fg })
-	vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = palette.background, fg = "None" })
+	vim.api.nvim_set_hl(0, "WinSeparator", { fg = "None", bg = "None" })
+	vim.api.nvim_set_hl(0, "NeoTreeFloatNormal", { bg = "None", fg = palette.fg })
+	vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { bg = "None", fg = palette.fg })
+	vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = "None", bg = "None" })
+	vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "None", fg = palette.fg })
+	vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "None", fg = "None" })
 	vim.api.nvim_set_hl(0, "TSType", { fg = palette.yellow, bg = "None" })
 	vim.api.nvim_set_hl(0, "TSTypeDefinition", { fg = palette.yellow, bg = "None" })
 	vim.api.nvim_set_hl(0, "TSConstructor", { fg = palette.yellow, bg = "None" })
