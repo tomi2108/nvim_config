@@ -1,9 +1,51 @@
 local common_setup = function()
-  vim.keymap.set("n", "<leader>fhw", function()
-    local result = vim.treesitter.get_captures_at_cursor(0)
-    print(vim.inspect(result))
-  end)
+  vim.keymap.set("n", "<leader>fhw", ":Inspect<CR>")
 end
+
+local sierra_setup = function()
+  local palette = require("addons.sierra-palette")
+  vim.cmd.colorscheme("sierra")
+  vim.api.nvim_set_hl(0, "FloatBorder", { fg = "None", bg = "None" })
+  vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = palette.inactive, bg = "None" })
+  vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "None", bg = "None" })
+  vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "None", bg = "None" })
+  vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = "None", bg = "None" })
+  vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "None", bg = "None" })
+  vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = palette.fg, bg = palette.visual })
+  vim.api.nvim_set_hl(0, "WinSeparator", { fg = "None", bg = "None" })
+  vim.api.nvim_set_hl(0, "NeoTreeFloatNormal", { bg = "None", fg = palette.fg })
+  vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { bg = "None", fg = palette.fg })
+  vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { fg = "None", bg = "None" })
+  vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "None", fg = palette.fg })
+  vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "None", fg = "None" })
+  vim.api.nvim_set_hl(0, "TSType", { fg = palette.yellow, bg = "None" })
+  vim.api.nvim_set_hl(0, "TSTypeDefinition", { fg = palette.yellow, bg = "None" })
+  vim.api.nvim_set_hl(0, "TSConstructor", { fg = palette.yellow, bg = "None" })
+  vim.api.nvim_set_hl(0, "TSTypeBuiltin", { fg = palette.yellow, bg = "None" })
+  vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "None", fg = "None" })
+  vim.api.nvim_set_hl(0, "YankyYanked", { bg = palette.visual, fg = "None" })
+  vim.api.nvim_set_hl(0, "flogBranch0", { bg = "None", fg = palette.green })
+  vim.api.nvim_set_hl(0, "flogBranch1", { bg = "None", fg = palette.green })
+  vim.api.nvim_set_hl(0, "flogBranch2", { bg = "None", fg = palette.yellow })
+  vim.api.nvim_set_hl(0, "flogBranch3", { bg = "None", fg = palette.lilac })
+  vim.api.nvim_set_hl(0, "flogBranch4", { bg = "None", fg = palette.magenta })
+  vim.api.nvim_set_hl(0, "flogBranch5", { bg = "None", fg = palette.green })
+  vim.api.nvim_set_hl(0, "flogBranch6", { bg = "None", fg = palette.blue })
+  vim.api.nvim_set_hl(0, "flogBranch7", { bg = "None", fg = palette.magenta })
+  vim.api.nvim_set_hl(0, "flogBranch8", { bg = "None", fg = palette.cyan })
+  vim.api.nvim_set_hl(0, "flogBranch9", { bg = "None", fg = palette.magenta })
+  vim.api.nvim_set_hl(0, "DiffAdd", { bg = palette.green, fg = "None" })
+  vim.api.nvim_set_hl(0, "DiffviewDiffAdd", { bg = palette.green, fg = palette.background })
+  vim.api.nvim_set_hl(0, "DiffviewDiffDelete", { bg = palette.red, fg = "None" })
+  vim.api.nvim_set_hl(0, "diffAdded", { bg = "None", fg = palette.green })
+  vim.api.nvim_set_hl(0, "diffRemoved", { bg = "None", fg = palette.red })
+  vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "None", fg = palette.red })
+  vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "None", fg = palette.yellow })
+  vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "None", fg = palette.green })
+  vim.cmd("hi TelescopeSelection guibg=" .. palette.visual .. " guifg=" .. palette.background)
+  common_setup()
+end
+
 local everforest_setup = function()
   local custom_colors = require("addons.everforest-palette")
   require("everforest").setup({
@@ -89,6 +131,7 @@ end
 
 local lilac_garden_setup = function()
   local palette = require("addons.lilac-garden-palette")
+  vim.cmd.colorscheme("text-to-colorscheme")
   vim.api.nvim_set_hl(0, "FloatBorder", { fg = palette.background, bg = "None" })
   vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = palette.background, bg = "None" })
   vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = palette.background, bg = "None" })
@@ -124,6 +167,7 @@ local lilac_garden_setup = function()
   vim.api.nvim_set_hl(0, "GitSignsDelete", { bg = "None", fg = palette.lilac })
   vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "None", fg = palette.green })
   vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "None", fg = palette.cyan })
+  vim.api.nvim_set_hl(0, "Error", { bg = "None", fg = palette.magenta})
   common_setup()
 end
 
@@ -169,10 +213,12 @@ local zenbones_setup = function()
   vim.api.nvim_set_hl(0, "GitSignsChange", { bg = "None", fg = palette.yellow })
   vim.api.nvim_set_hl(0, "GitSignsAdd", { bg = "None", fg = palette.green })
 end
+
 return {
   everforest_setup = everforest_setup,
   zenbones_setup = zenbones_setup,
   solarized_osaka_setup = solarized_osaka_setup,
   rose_pine_setup = rose_pine_setup,
   lilac_garden_setup = lilac_garden_setup,
+  sierra_setup = sierra_setup
 }

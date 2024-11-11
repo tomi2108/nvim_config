@@ -23,7 +23,7 @@ return {
 					{ name = "luasnip" }, -- For luasnip users.
 					{ name = "buffer" },
 					{ name = "path" },
-					-- { name = "cmdline" },
+					{ name = "cmdline" },
 					{ name = "cmp_nvim_lsp_signature_help" },
 					{ name = "cmp_nvim_lsp_document_symbol" },
 					{ name = "friendly-snippets" },
@@ -50,12 +50,12 @@ return {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = "path" },
-					-- {
-					-- 	name = "cmdline",
-					-- 	option = {
-					-- 		ignore_cmds = { "Man", "!" },
-					-- 	},
-					-- },
+					{
+						name = "cmdline",
+						option = {
+							ignore_cmds = { "Man", "!" },
+						},
+					},
 				}),
 			})
 		end,
@@ -69,7 +69,7 @@ return {
 		end,
 	},
 	{ "hrsh7th/cmp-nvim-lsp" },
-	-- { "hrsh7th/cmp-cmdline" },
+	{ "hrsh7th/cmp-cmdline" },
 	{ "hrsh7th/cmp-path" },
 	{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
 	{ "hrsh7th/cmp-nvim-lsp-signature-help" },

@@ -1,3 +1,54 @@
+local sierra_colors= function()
+  local palette = require("addons.sierra-palette")
+  local theme = {
+    normal = {
+      a = {},
+      b = {},
+      c = {},
+      x = {},
+      y = {},
+      z = {},
+    },
+    insert = {
+      a = {},
+      b = {},
+      c = {},
+      x = {},
+      y = {},
+      z = {},
+    },
+    visual = {
+      a = {},
+      b = {},
+      c = {},
+      x = {},
+      y = {},
+      z = {},
+    },
+    terminal = {
+      a = {},
+      b = {},
+      c = {},
+      x = {},
+      y = {},
+      z = {},
+    },
+  }
+  local sections = { "a", "b", "c", "x", "y", "z" }
+
+  for _, letter in pairs(sections) do
+    theme.normal[letter].fg = palette.fg
+    theme.insert[letter].fg = palette.fg
+    theme.visual[letter].fg = palette.fg
+    theme.terminal[letter].fg = palette.fg
+    theme.normal[letter].bg = "none"
+    theme.insert[letter].bg = "none"
+    theme.visual[letter].bg = "none"
+    theme.terminal[letter].bg = "none"
+  end
+  return theme
+end
+
 local everforest_colors = function()
   local theme = require("lualine.themes.everforest")
   local sections = { "a", "b", "c" }
@@ -98,7 +149,7 @@ return {
     { "archibate/lualine-time" },
   },
   config = function()
-    local theme = everforest_colors()
+    local theme = lilac_garden_colors()
     -- local word_count = function()
     --   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
     --   local content = table.concat(lines, " ")

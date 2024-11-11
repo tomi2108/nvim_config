@@ -9,6 +9,6 @@ return {
   setup = function()
     local setup = require("vim-colorscheme")
     -- setup.zenbones_setup()
-    setup.everforest_setup()
+    setup.lilac_garden_setup()
   end,
 }
