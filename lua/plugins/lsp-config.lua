@@ -109,7 +109,7 @@ return {
 				cmd = {
 					mason_bin_path .. "/sqls",
 					"-config",
-					"/home/tsanchen/.local/share/nvim/mason/share/sqls-config.yml",
+					"/home/tsanchen/.config/sqls/config.yml",
 				},
 			})
 
