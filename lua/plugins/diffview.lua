@@ -37,9 +37,9 @@ return {
             actions.goto_file_edit,
             { desc = "Open the file in the previous tabpage" },
           },
-          { "n", "<leader>co",    actions.conflict_choose_all("ours"),   { desc = "Choose conflict --ours" } },
-          { "n", "<leader>ct",    actions.conflict_choose_all("theirs"), { desc = "Choose conflict --theirs" } },
-          { "n", "<leader>cb",    actions.conflict_choose_all("base"),   { desc = "Choose conflict --base" } },
+          -- { "n", "<leader>co",    actions.conflict_choose_all("ours"),   { desc = "Choose conflict --ours" } },
+          -- { "n", "<leader>ct",    actions.conflict_choose_all("theirs"), { desc = "Choose conflict --theirs" } },
+          -- { "n", "<leader>cb",    actions.conflict_choose_all("base"),   { desc = "Choose conflict --base" } },
           ["gq"] = function()
             if vim.fn.tabpagenr("$") > 1 then
               vim.cmd.DiffviewClose()
@@ -83,17 +83,17 @@ return {
           },
           { "n", "S",  actions.stage_all,     { desc = "Stage all entries" } },
           { "n", "U",  actions.unstage_all,   { desc = "Unstage all entries" } },
-          { "n", "c-", actions.prev_conflict, { desc = "Go to prev conflict" } },
-          { "n", "c+", actions.next_conflict, { desc = "Go to next conflict" } },
+          -- { "n", "c-", actions.prev_conflict, { desc = "Go to prev conflict" } },
+          -- { "n", "c+", actions.next_conflict, { desc = "Go to next conflict" } },
           {
             "n",
             "gf",
             actions.goto_file_edit,
             { desc = "Open the file in the previous tabpage" },
           },
-          { "n", "co",      actions.conflict_choose_all("ours"),   { desc = "Choose conflict --ours" } },
-          { "n", "ct",      actions.conflict_choose_all("theirs"), { desc = "Choose conflict --theirs" } },
-          { "n", "cb",      actions.conflict_choose_all("base"),   { desc = "Choose conflict --base" } },
+          -- { "n", "co",      actions.conflict_choose_all("ours"),   { desc = "Choose conflict --ours" } },
+          -- { "n", "ct",      actions.conflict_choose_all("theirs"), { desc = "Choose conflict --theirs" } },
+          -- { "n", "cb",      actions.conflict_choose_all("base"),   { desc = "Choose conflict --base" } },
           { "n", "<Right>", actions.open_fold,                     { desc = "Expand fold" } },
           { "n", "<Left>",  actions.close_fold,                    { desc = "Collapse fold" } },
           {

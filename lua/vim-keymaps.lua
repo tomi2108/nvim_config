@@ -66,7 +66,7 @@ km.set("n", "H", "r<CR>")
 km.set("n", "q:", "<nop>")
 
 -- Open terminal split
-km.set("n", "<leader>i", ":new<CR>:term<CR>")
+-- km.set("n", "<leader>i", ":new<CR>:term<CR>")
 
 -- Search and replace
 km.set("v", "<leader>s", ":s//g<C-f>h<C-c>")
@@ -92,18 +92,18 @@ km.set("n", "<leader>m", function()
 end, {})
 
 -- Diff clipboard
-km.set("n","<leader>dc",function()
-  vim.cmd([[
-    let ft=&ft
-    leftabove vnew [Clipboard]
-    setlocal bufhidden=wipe buftype=nofile noswapfile
-    put +
-    0d_
-    " remove CR for Windows
-    silent %s/\r$//e
-    execute "set ft=" . ft
-    diffthis
-    wincmd p
-    diffthis
-  ]])
-end, { desc = "Compare Active File with Clipboard" })
+-- km.set("n","<leader>dc",function()
+--   vim.cmd([[
+--     let ft=&ft
+--     leftabove vnew [Clipboard]
+--     setlocal bufhidden=wipe buftype=nofile noswapfile
+--     put +
+--     0d_
+--     " remove CR for Windows
+--     silent %s/\r$//e
+--     execute "set ft=" . ft
+--     diffthis
+--     wincmd p
+--     diffthis
+--   ]])
+-- end, { desc = "Compare Active File with Clipboard" })
