@@ -5,7 +5,7 @@ local opts = { noremap = true, silent = true }
 km.set("n", "+", "<C-a>")
 km.set("n", "-", "<C-x>")
 
-km.set("n", "<leader>dd", ":HexToggle<CR>")
+-- km.set("n", "<leader>dd", ":HexToggle<CR>")
 
 -- Move lines
 km.set("v", "J", ":m '>+1<CR>gv=gv")
