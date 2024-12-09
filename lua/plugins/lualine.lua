@@ -149,7 +149,7 @@ return {
     { "archibate/lualine-time" },
   },
   config = function()
-    local theme = lilac_garden_colors()
+    local theme = zenbones_colors()
     -- local word_count = function()
     --   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
     --   local content = table.concat(lines, " ")

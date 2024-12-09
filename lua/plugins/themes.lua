@@ -27,8 +27,8 @@ return {
     lazy = false,
     config = function()
       local setup = require("vim-colorscheme")
-      -- setup.zenbones_setup()
-      setup.lilac_garden_setup()
+      setup.zenbones_setup()
+      -- setup.lilac_garden_setup()
     end,
   },
   {
