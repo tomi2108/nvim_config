@@ -8,7 +8,8 @@ return {
   priority = 1000,
   setup = function()
     local setup = require("vim-colorscheme")
-    setup.zenbones_setup()
+    -- setup.zenbones_setup()
     -- setup.lilac_garden_setup()
+    setup.react_setup()
   end,
 }
