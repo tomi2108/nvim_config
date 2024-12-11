@@ -47,7 +47,7 @@ km.set("n", "<C-y>", "<C-O>", opts)
 km.set("v", "Y", '"+y')
 
 -- Lsp
-km.set("n", "gd", vim.lsp.buf.definition)
+-- km.set("n", "gd", vim.lsp.buf.definition)
 km.set("n", "grn", vim.lsp.buf.rename)
 
 -- Diagnostic navigation

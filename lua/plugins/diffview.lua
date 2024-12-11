@@ -163,12 +163,12 @@ return {
             actions.select_entry,
             { desc = "Open the diff for the selected entry." },
           },
-          {
-            "n",
-            "gd",
-            actions.open_in_diffview,
-            { desc = "Open the entry under the cursor in a diffview" },
-          },
+          -- {
+          --   "n",
+          --   "gd",
+          --   actions.open_in_diffview,
+          --   { desc = "Open the entry under the cursor in a diffview" },
+          -- },
           {
             "n",
             "y",

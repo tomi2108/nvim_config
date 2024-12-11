@@ -20,7 +20,6 @@ local git_hunks = function()
         previewer = require("telescope.config").values.grep_previewer({}),
         results_title = "Results",
         prompt_title = "Git hunks",
-        layout_strategy = "horizontal",
       }, {})
       :find()
 end
@@ -35,18 +34,20 @@ return {
     },
     config = function()
       local builtin = require("telescope.builtin")
+      local theme = require("telescope.themes").get_ivy()
       vim.keymap.set("n", "<leader>q", builtin.find_files, {})
       vim.keymap.set("n", "<leader>cl", builtin.colorscheme, {})
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>gh", git_hunks, {})
       vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
       vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {})
-      vim.keymap.set("n", "<leader>gi", builtin.lsp_implementations, {})
+      vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
       vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
       vim.keymap.set("n", "<leader>fm", builtin.man_pages, {})
       vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
       vim.keymap.set("n", "<leader>fhl", builtin.highlights, {})
+      vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
       vim.keymap.set("n", "<leader>fws", function()
         local word = vim.fn.expand("<cword>")
         builtin.grep_string({ search = word })
@@ -58,6 +59,10 @@ return {
     end,
   },
   {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = 'make'
+  },
+  {
     "nvim-telescope/telescope-ui-select.nvim",
     config = function()
       require("telescope").setup({
@@ -65,18 +70,19 @@ return {
           find_files = {
             hidden = true,
           },
-          colorscheme = {
-            enable_preview = true,
-          },
         },
         defaults = {
-          layout_strategy = "horizontal",
+          theme = "ivy",
+          sorting_strategy = "ascending",
+          layout_strategy = "bottom_pane",
           layout_config = {
-            horizontal = {
-              width = 0.95,
-              prompt_position = "bottom",
-              preview_width = 0.6,
-            },
+            height = 20,
+          },
+          border = true,
+          borderchars = {
+            prompt = { " ", " ", "─", " ", " ", " ", "─", "─" },
+            results = { "─", " ", " ", " ", "─", "─", " ", " " },
+            preview = { "─", " ", "─", "│", "┬", "─", "─", "╰" },
           },
           file_ignore_patterns = {
             "node_modules",
@@ -97,12 +103,14 @@ return {
           },
         },
         extensions = {
+          fzf           = {},
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown({}),
+            require("telescope.themes").get_ivy({}),
           },
         },
       })
       require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("fzf")
     end,
   },
 }
