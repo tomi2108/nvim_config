@@ -3,34 +3,25 @@ return {
   config = function()
     local diffview = require("diffview")
     local actions = require("diffview.actions")
-		vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>")
+    vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>")
     diffview.setup({
       enhanced_diff_hl = true,
       view = {
         default = {
+          layout = "diff2_vertical",
           disable_diagnostics = true,
-        },
-        merge_tool = {
-          layout = "diff3_mixed",
         },
       },
       file_panel = {
         win_config = {
-          position = "bottom",
-          height = 10,
-        },
-      },
-      file_history_panel = {
-        win_config = {
-          type = "split",
-          position = "bottom",
-          height = 10,
+          position = "left",
+          width = 20
         },
       },
       keymaps = {
         disable_defaults = true,
         view = {
-          { "n", "<C-f>", actions.toggle_files,                  { desc = "Toggle the file panel" } },
+          { "n", "<C-f>", actions.toggle_files, { desc = "Toggle the file panel" } },
           {
             "n",
             "gf",
@@ -81,8 +72,8 @@ return {
             actions.toggle_stage_entry,
             { desc = "Stage/unstage the selected entry" },
           },
-          { "n", "S",  actions.stage_all,     { desc = "Stage all entries" } },
-          { "n", "U",  actions.unstage_all,   { desc = "Unstage all entries" } },
+          { "n", "S", actions.stage_all,   { desc = "Stage all entries" } },
+          { "n", "U", actions.unstage_all, { desc = "Unstage all entries" } },
           -- { "n", "c-", actions.prev_conflict, { desc = "Go to prev conflict" } },
           -- { "n", "c+", actions.next_conflict, { desc = "Go to next conflict" } },
           {
@@ -94,8 +85,8 @@ return {
           -- { "n", "co",      actions.conflict_choose_all("ours"),   { desc = "Choose conflict --ours" } },
           -- { "n", "ct",      actions.conflict_choose_all("theirs"), { desc = "Choose conflict --theirs" } },
           -- { "n", "cb",      actions.conflict_choose_all("base"),   { desc = "Choose conflict --base" } },
-          { "n", "<Right>", actions.open_fold,                     { desc = "Expand fold" } },
-          { "n", "<Left>",  actions.close_fold,                    { desc = "Collapse fold" } },
+          { "n", "<Right>", actions.open_fold,  { desc = "Expand fold" } },
+          { "n", "<Left>",  actions.close_fold, { desc = "Collapse fold" } },
           {
             "n",
             "l",

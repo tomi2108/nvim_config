@@ -40,7 +40,7 @@ return {
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
       vim.keymap.set("n", "<leader>gh", git_hunks, {})
       vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
-      vim.keymap.set("n", "<leader>gr", builtin.lsp_references, {})
+      vim.keymap.set("n", "gr", builtin.lsp_references, {})
       vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
       vim.keymap.set("n", "<leader>fc", builtin.git_commits, {})
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
