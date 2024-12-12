@@ -1,6 +1,7 @@
 vim.opt.autoindent = true
 vim.opt.cmdheight = 0
 vim.opt.cursorline = false
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.expandtab = true
 vim.opt.fillchars:append("eob: ")
 vim.opt.hlsearch = false
@@ -37,5 +38,5 @@ vim.g.mapleader = " "
 
 -- show diagnostics in insert mode
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  update_in_insert = true,
+	update_in_insert = true,
 })

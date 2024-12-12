@@ -21,4 +21,5 @@ local load_snippets = function()
 		}),
 	})
 end
+
 return { load_snippets = load_snippets }
