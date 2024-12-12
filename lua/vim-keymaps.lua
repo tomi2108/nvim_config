@@ -65,6 +65,9 @@ km.set("n", "H", "r<CR>")
 -- Disable q:
 km.set("n", "q:", "<nop>")
 
+-- Paste clipboard
+km.set("n", "P", '"+p')
+
 -- Open terminal split
 -- km.set("n", "<leader>i", ":new<CR>:term<CR>")
 
