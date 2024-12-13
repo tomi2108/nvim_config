@@ -87,28 +87,40 @@ return {
         }
       end
 
-      dap.listeners.before.attach.dapui_config = function()
-        dapui.open()
-      end
-      dap.listeners.before.launch.dapui_config = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated.dapui_config = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited.dapui_config = function()
-        dapui.close()
-      end
+      local widgets = require('dap.ui.widgets')
+
+      -- set scopes as right pane
+      local scopes = widgets.sidebar(widgets.scopes, {}, 'vsplit')
+
+      -- set frames as bottom pane
+      local frames = widgets.sidebar(widgets.frames, { height = 10 }, 'belowright split')
+
+      vim.keymap.set('n', '<leader>dj', dap.continue)
+      vim.keymap.set('n', '<leader>dm', dap.step_over)
+      vim.keymap.set('n', '<leader>di', dap.step_into)
+      vim.keymap.set('n', '<leader>dk', dap.toggle_breakpoint)
+      vim.keymap.set('n', '<leader>dn', dap.clear_breakpoints)
+      vim.keymap.set('n', '<leader>dt', dap.terminate)
+
+      local repl = require('dap.repl')
+
+      vim.keymap.set(
+        'n', '<leader>da',
+        function()
+          return repl.toggle({}, 'belowright split')
+        end
+      )
+
+      vim.keymap.set('n', '<leader>ds', scopes.toggle)
+      vim.keymap.set('n', '<leader>df', frames.toggle)
+      vim.keymap.set('n', '<leader>dh', widgets.hover)
 
       vim.keymap.set("n", "<leader>dc", dap.continue, {})
       vim.keymap.set("n", "<leader>di", dap.step_into, {})
       vim.keymap.set("n", "<leader>dov", dap.step_over, {})
       vim.keymap.set("n", "<leader>dou", dap.step_out, {})
       vim.keymap.set("n", "<leader>db", dap.step_back, {})
-      vim.keymap.set("n", "<leader>dr", function ()
-        dapui.close()
-      end
-        , {})
+      vim.keymap.set("n", "<leader>dr", dap.terminate, {})
       vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {})
       vim.keymap.set("n", "<leader>?", function()
         require("dapui").eval(nil, { enter = true })
