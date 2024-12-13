@@ -83,6 +83,10 @@ km.set({ "n", "v" }, "X", '"_X', opts)
 km.set("n", "<leader>x", '<cmd>.lua<CR>', opts)
 km.set("n", "<leader><leader>x", '<cmd>source %<CR>', opts)
 
+-- Jump to start and end of line
+km.set({ "n", "x" }, "H", "g^")
+km.set({ "n", "x" }, "L", "g_")
+
 -- Open manual
 -- km.set("n", "<leader>m", function()
 --   local current_word = vim.fn.expand("<cword>")
