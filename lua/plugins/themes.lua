@@ -1,5 +1,8 @@
 return {
   {
+    "xero/miasma.nvim"
+  },
+  {
     "zaldih/themery.nvim",
     lazy = false,
     config = function()
@@ -17,6 +20,9 @@ return {
     -- end,
   },
   {
+    "atelierbram/vim-colors_atelier-schemes"
+  },
+  {
     "AlessandroYorba/Sierra"
   },
   {
@@ -28,10 +34,14 @@ return {
     config = function()
       local setup = require("vim-colorscheme")
       -- setup.zenbones_setup()
+      setup.darkearth_setup()
+      -- setup.everforest_setup()
       -- setup.lilac_garden_setup()
-      setup.react_setup()
+      -- setup.react_setup()
     end,
   },
+  { "qaptoR-nvim/chocolatier.nvim" },
+  { "ptdewey/darkearth-nvim",      priority = 1000 },
   {
     -- "craftzdog/solarized-osaka.nvim",
     -- lazy = false,

@@ -10,6 +10,7 @@ return {
     local setup = require("vim-colorscheme")
     -- setup.zenbones_setup()
     -- setup.lilac_garden_setup()
-    setup.react_setup()
+    setup.darkearth_setup()
+    -- setup.react_setup()
   end,
 }
