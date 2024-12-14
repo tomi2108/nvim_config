@@ -8,4 +8,5 @@ return {
   yellow = "#C9A654",
   purple = "#BB7844",
   red = "#B36B42",
+  disabled = "#6E665E",
 }

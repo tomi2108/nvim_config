@@ -1,15 +1,15 @@
 return {
   {
-    "xero/miasma.nvim"
+    -- "xero/miasma.nvim"
   },
   {
-    "zaldih/themery.nvim",
-    lazy = false,
-    config = function()
-      require("themery").setup({
-        -- add the config here
-      })
-    end
+    -- "zaldih/themery.nvim",
+    -- lazy = false,
+    -- config = function()
+    --   require("themery").setup({
+    --     -- add the config here
+    --   })
+    -- end
   },
   {
     -- "rose-pine/neovim",
@@ -20,13 +20,13 @@ return {
     -- end,
   },
   {
-    "atelierbram/vim-colors_atelier-schemes"
+    -- "atelierbram/vim-colors_atelier-schemes"
   },
   {
-    "AlessandroYorba/Sierra"
+    -- "AlessandroYorba/Sierra"
   },
   {
-    "ellisonleao/gruvbox.nvim"
+    -- "ellisonleao/gruvbox.nvim"
   },
   {
     "neanias/everforest-nvim",
@@ -40,7 +40,7 @@ return {
       -- setup.react_setup()
     end,
   },
-  { "qaptoR-nvim/chocolatier.nvim" },
+  -- { "qaptoR-nvim/chocolatier.nvim" },
   { "ptdewey/darkearth-nvim",      priority = 1000 },
   {
     -- "craftzdog/solarized-osaka.nvim",
@@ -70,7 +70,7 @@ return {
     -- lazy = false,
     -- priority = 1000,
   },
-  { "EdenEast/nightfox.nvim" },
+  -- { "EdenEast/nightfox.nvim" },
   -- { "rebelot/kanagawa.nvim" },
   {
     -- "horanmustaplot/xcarbon.nvim",
