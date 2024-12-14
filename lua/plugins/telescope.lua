@@ -80,6 +80,7 @@ return {
         pickers = {
           find_files = {
             hidden = true,
+            default_text = "'",
           },
         },
         defaults = {
@@ -98,6 +99,7 @@ return {
           file_ignore_patterns = {
             "node_modules",
             "package-lock",
+            "cache/",
             ".git/",
             "build/",
             "dist/",
