@@ -53,7 +53,7 @@ return {
 		config = function()
 			local mason_path = "/home/tsanchen/.local/share/nvim/mason"
 			local mason_bin_path = mason_path .. "/bin"
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local lsp = require("lspconfig")
 			for _, v in ipairs(Lsps) do

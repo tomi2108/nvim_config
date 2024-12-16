@@ -80,6 +80,7 @@ return {
         pickers = {
           find_files = {
             hidden = true,
+            find_command = { "rg", "--no-config", "--files", "--sortr=modified" },
             default_text = "'",
           },
         },

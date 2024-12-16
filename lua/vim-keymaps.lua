@@ -87,6 +87,23 @@ km.set("n", "<leader><leader>x", '<cmd>source %<CR>', opts)
 km.set({ "n", "x" }, "H", "g^")
 km.set({ "n", "x" }, "L", "g_")
 
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup('custom-term', { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+  end
+})
+
+-- Run tests
+km.set("n", "<leader>tt", function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  local job_id = vim.bo.channel
+  vim.fn.chansend(job_id, { "npm run test" })
+end)
+
 -- Open manual
 -- km.set("n", "<leader>m", function()
 --   local current_word = vim.fn.expand("<cword>")
