@@ -192,6 +192,7 @@ local darkearth_setup = function()
   vim.api.nvim_set_hl(0, "LineNrAbove", { bg = palette.background, fg = palette.disabled })
   vim.api.nvim_set_hl(0, "LineNrBelow", { bg = palette.background, fg = palette.disabled })
   vim.api.nvim_set_hl(0, "OilDir", { bg = palette.background, fg = palette.green })
+  vim.api.nvim_set_hl(0, "SnippetTabStop", { bg = palette.background, fg = 'None' })
   common_setup()
 end
 

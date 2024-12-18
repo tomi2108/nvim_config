@@ -127,8 +127,34 @@ return {
         default = { 'lsp', 'path', 'luasnip', 'buffer', },
         cmdline = {},
       },
+      signature = { enabled = true },
     },
     opts_extend = { "sources.default" }
+  },
+  {
+    "chrisgrieser/nvim-scissors",
+    dependencies = "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<leader>ne", function() require("scissors").editSnippet() end, desc = "󰩫 Edit" },
+      {
+        "<leader>na",
+        function() require("scissors").addNewSnippet() end,
+        mode = { "n", "x" },
+        desc = "󰩫 Add",
+      },
+    },
+    opts = {
+      editSnippetPopup = {
+        height = 0.5,
+        width = 0.7,
+        border = "none",
+        keymaps = {
+          deleteSnippet = "<D-BS>",
+          insertNextPlaceholder = "<leader>t",
+        },
+      },
+      telescope = { alsoSearchSnippetBody = true },
+    },
   },
   {
     -- "David-Kunz/cmp-npm",

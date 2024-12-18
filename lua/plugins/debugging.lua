@@ -119,7 +119,6 @@ return {
       vim.keymap.set("n", "<leader>di", dap.step_into, {})
       vim.keymap.set("n", "<leader>dov", dap.step_over, {})
       vim.keymap.set("n", "<leader>dou", dap.step_out, {})
-      vim.keymap.set("n", "<leader>db", dap.step_back, {})
       vim.keymap.set("n", "<leader>dr", dap.terminate, {})
       vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {})
       vim.keymap.set("n", "<leader>?", function()
