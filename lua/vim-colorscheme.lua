@@ -1,5 +1,5 @@
 local common_setup = function()
-  vim.keymap.set("n", "<leader>fhw", ":Inspect<CR>")
+  vim.keymap.set("n", "<leader>lw", ":Inspect<CR>")
 end
 
 local sierra_setup = function()

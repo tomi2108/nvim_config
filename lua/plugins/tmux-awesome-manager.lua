@@ -7,10 +7,16 @@ return {
 			open_new_as = "window",
 		})
 
+
 		tmux.run({
 			cmd = "npm install %1",
 			name = "npm install",
 			questions = { { question = "package name: ", required = true } },
+		})
+
+		tmux.run({
+			cmd = "npm run test",
+			name = "npm run test",
 		})
 
 		tmux.run({

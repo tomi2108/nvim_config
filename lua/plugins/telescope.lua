@@ -52,7 +52,7 @@ return {
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
       vim.keymap.set("n", "<leader>fm", builtin.man_pages, {})
       vim.keymap.set("n", "<leader>km", builtin.keymaps, {})
-      vim.keymap.set("n", "<leader>fhl", builtin.highlights, {})
+      vim.keymap.set("n", "<leader>fl", builtin.highlights, {})
       vim.keymap.set("n", "<leader>en", function()
         builtin.find_files({
           cwd = vim.fn.stdpath("config"),
